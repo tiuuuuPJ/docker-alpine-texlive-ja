@@ -23,7 +23,7 @@ RUN apk --no-cache add perl wget xz tar fontconfig-dev freetype-dev && \
     tlmgr install \
       collection-basic collection-luatex \
       collection-fontsrecommended collection-langjapanese \
-      etoolbox filehook fontspec xkeyval \
+      etoolbox filehook fontspec xkeyval ulem \
       latexmk beamer luatexja luatexbase luaotfload && \
     rm -fr /tmp/install-tl-unx && \
     apk --no-cache del xz tar
