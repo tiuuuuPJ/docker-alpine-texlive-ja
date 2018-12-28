@@ -5,7 +5,7 @@
 
 FROM frolvlad/alpine-glibc
 
-MAINTAINER 3846masa
+MAINTAINER pj
 
 ENV PATH /usr/local/texlive/2018/bin/x86_64-linuxmusl:$PATH
 
@@ -21,10 +21,10 @@ RUN apk --no-cache add perl wget xz tar fontconfig-dev freetype-dev && \
     /tmp/install-tl-unx/install-tl \
       --profile=/tmp/install-tl-unx/texlive.profile && \
     tlmgr install \
-      collection-basic collection-latex \
-      collection-latexrecommended collection-latexextra \
+      collection-basic collection-luatex \
       collection-fontsrecommended collection-langjapanese \
-      latexmk xetex && \
+      etoolbox filehook fontspec xkeyval \
+      latexmk beamer luatexja luatexbase luaotfload && \
     rm -fr /tmp/install-tl-unx && \
     apk --no-cache del xz tar
 
